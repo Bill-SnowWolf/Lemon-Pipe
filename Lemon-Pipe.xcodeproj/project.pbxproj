@@ -17,7 +17,12 @@
 		B2DA07531802F9C300CAF01A /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B2DA07521802F9C300CAF01A /* Default@2x.png */; };
 		B2DA07551802F9C300CAF01A /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B2DA07541802F9C300CAF01A /* Default-568h@2x.png */; };
 		B2DA07581802F9C300CAF01A /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2DA07561802F9C300CAF01A /* MainStoryboard.storyboard */; };
-		B2DA075B1802F9C300CAF01A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2DA075A1802F9C300CAF01A /* ViewController.m */; };
+		B2DA075B1802F9C300CAF01A /* StartupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2DA075A1802F9C300CAF01A /* StartupViewController.m */; };
+		B2DA07631803016300CAF01A /* ProductsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2DA07621803016300CAF01A /* ProductsViewController.m */; };
+		B2DA07661803020C00CAF01A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2DA07651803020C00CAF01A /* ViewController.m */; };
+		B2DA076C18032F6300CAF01A /* Product.m in Sources */ = {isa = PBXBuildFile; fileRef = B2DA076B18032F6300CAF01A /* Product.m */; };
+		B2DA076F1803336800CAF01A /* ProductList.m in Sources */ = {isa = PBXBuildFile; fileRef = B2DA076E1803336800CAF01A /* ProductList.m */; };
+		B2DA0772180333B300CAF01A /* NewProductViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2DA0771180333B300CAF01A /* NewProductViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,8 +40,18 @@
 		B2DA07521802F9C300CAF01A /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		B2DA07541802F9C300CAF01A /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		B2DA07571802F9C300CAF01A /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		B2DA07591802F9C300CAF01A /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		B2DA075A1802F9C300CAF01A /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		B2DA07591802F9C300CAF01A /* StartupViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StartupViewController.h; sourceTree = "<group>"; };
+		B2DA075A1802F9C300CAF01A /* StartupViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StartupViewController.m; sourceTree = "<group>"; };
+		B2DA07611803016300CAF01A /* ProductsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductsViewController.h; sourceTree = "<group>"; };
+		B2DA07621803016300CAF01A /* ProductsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductsViewController.m; sourceTree = "<group>"; };
+		B2DA07641803020C00CAF01A /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		B2DA07651803020C00CAF01A /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		B2DA076A18032F6300CAF01A /* Product.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Product.h; sourceTree = "<group>"; };
+		B2DA076B18032F6300CAF01A /* Product.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Product.m; sourceTree = "<group>"; };
+		B2DA076D1803336800CAF01A /* ProductList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductList.h; sourceTree = "<group>"; };
+		B2DA076E1803336800CAF01A /* ProductList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductList.m; sourceTree = "<group>"; };
+		B2DA0770180333B200CAF01A /* NewProductViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewProductViewController.h; sourceTree = "<group>"; };
+		B2DA0771180333B300CAF01A /* NewProductViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewProductViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,8 +101,18 @@
 				B2DA074D1802F9C300CAF01A /* AppDelegate.h */,
 				B2DA074E1802F9C300CAF01A /* AppDelegate.m */,
 				B2DA07561802F9C300CAF01A /* MainStoryboard.storyboard */,
-				B2DA07591802F9C300CAF01A /* ViewController.h */,
-				B2DA075A1802F9C300CAF01A /* ViewController.m */,
+				B2DA076A18032F6300CAF01A /* Product.h */,
+				B2DA076B18032F6300CAF01A /* Product.m */,
+				B2DA076D1803336800CAF01A /* ProductList.h */,
+				B2DA076E1803336800CAF01A /* ProductList.m */,
+				B2DA07591802F9C300CAF01A /* StartupViewController.h */,
+				B2DA075A1802F9C300CAF01A /* StartupViewController.m */,
+				B2DA07611803016300CAF01A /* ProductsViewController.h */,
+				B2DA07621803016300CAF01A /* ProductsViewController.m */,
+				B2DA0770180333B200CAF01A /* NewProductViewController.h */,
+				B2DA0771180333B300CAF01A /* NewProductViewController.m */,
+				B2DA07641803020C00CAF01A /* ViewController.h */,
+				B2DA07651803020C00CAF01A /* ViewController.m */,
 				B2DA07451802F9C300CAF01A /* Supporting Files */,
 			);
 			path = "Lemon-Pipe";
@@ -175,7 +200,12 @@
 			files = (
 				B2DA074B1802F9C300CAF01A /* main.m in Sources */,
 				B2DA074F1802F9C300CAF01A /* AppDelegate.m in Sources */,
-				B2DA075B1802F9C300CAF01A /* ViewController.m in Sources */,
+				B2DA075B1802F9C300CAF01A /* StartupViewController.m in Sources */,
+				B2DA07631803016300CAF01A /* ProductsViewController.m in Sources */,
+				B2DA07661803020C00CAF01A /* ViewController.m in Sources */,
+				B2DA076C18032F6300CAF01A /* Product.m in Sources */,
+				B2DA076F1803336800CAF01A /* ProductList.m in Sources */,
+				B2DA0772180333B300CAF01A /* NewProductViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

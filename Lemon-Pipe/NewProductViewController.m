@@ -1,19 +1,19 @@
 //
-//  ViewController.m
+//  NewProductViewController.m
 //  Lemon-Pipe
 //
 //  Created by Bill on 13-10-07.
 //  Copyright (c) 2013 Bill. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "NewProductViewController.h"
 
-@interface ViewController ()
+@interface NewProductViewController ()
 
 @end
 
-@implementation ViewController
-@synthesize textField;
+@implementation NewProductViewController
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -33,12 +33,6 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
-- (IBAction)inputValue:(id)sender
-{
-    NSLog(@"IBAction");	
-    [self.delegate value:textField.text];
 }
 
 @end

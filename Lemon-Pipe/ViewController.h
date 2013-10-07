@@ -8,6 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@protocol AddItemsDelegate <NSObject>
 
+- (void)value: (NSString *) string;
+
+@end
+
+@interface ViewController : UIViewController
+@property (nonatomic, retain) IBOutlet UITextField *textField;
+@property (nonatomic, weak) id<AddItemsDelegate> delegate;
+
+- (IBAction)inputValue:(id)sender;
 @end
