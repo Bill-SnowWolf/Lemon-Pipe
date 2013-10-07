@@ -7,8 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ViewController.h"
 
-@interface ProductsViewController : UITableViewController <AddItemsDelegate>
+@interface ProductsTableViewController : UITableViewController
 
 @end

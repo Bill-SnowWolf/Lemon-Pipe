@@ -6,16 +6,17 @@
 //  Copyright (c) 2013 Bill. All rights reserved.
 //
 
-#import "ProductsViewController.h"
+#import "ProductsTableViewController.h"
+#import "ProductsTableViewCell.h"
+#import "Product.h"
 
-@interface ProductsViewController ()
+@interface ProductsTableViewController ()
 {
     NSMutableArray *productLists;
-    ProductsViewController *instance;
 }
 @end
 
-@implementation ProductsViewController
+@implementation ProductsTableViewController
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -32,10 +33,11 @@
     
     productLists = [[NSMutableArray alloc] initWithCapacity:20];
     
-    NSString *string = @"Hello";
-    
-    [productLists addObject:string];
-    
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"Protein" ofType:@"jpg"];
+    UIImage *image = [[UIImage alloc] initWithContentsOfFile:filePath];
+    Product *product = [[Product alloc] initWithImage:image MSRP:10.00 Discount:35 Duration:4];
+    [productLists addObject:product];
+        
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
@@ -67,13 +69,16 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    static NSString *CellIdentifier = @"ProductCell";
+    ProductsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        cell = [[ProductsTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }	
     // Configure the cell...
-    [[cell textLabel] setText:[productLists objectAtIndex:indexPath.row]];
+    Product *product = [productLists objectAtIndex:indexPath.row];
+    [[cell productImageView] setImage:[product image]];
+    [[cell discountLabel] setText:[NSString stringWithFormat:@"%i", product.discount]];
+    [[cell remainningDaysLabel] setText:[NSString stringWithFormat:@"%i", product.duration]];
     
     return cell;
 }
@@ -132,12 +137,16 @@
      */
 }
 
+/*
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     ViewController *controller = [segue destinationViewController];
     controller.delegate = self;
 }
+*/
 
+/*
 #pragma mark - AddItem delegat
 - (void) value:(NSString *)string
 {
@@ -145,5 +154,6 @@
     [self.tableView reloadData];
     NSLog(@"%@", string);
 }
+ */
 
 @end

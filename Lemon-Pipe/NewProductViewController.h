@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface NewProductViewController : UIViewController
+@interface NewProductViewController : UIViewController <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 
+- (IBAction)takePicture;
 @end

@@ -35,4 +35,25 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction) takePicture
+{
+    UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
+    
+    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+        [imagePicker setSourceType:UIImagePickerControllerSourceTypeCamera];
+    }
+    else {
+        [imagePicker setSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
+    }
+    
+    [imagePicker setDelegate:self];
+    
+    [self presentViewController:imagePicker animated:YES completion:nil];
+}
+
+- (void) viewWillDisappear:(BOOL)animated
+{
+    NSLog(@"Dismiss");
+}
+
 @end
