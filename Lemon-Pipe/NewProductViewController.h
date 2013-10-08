@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface NewProductViewController : UIViewController <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
+@interface NewProductViewController : UIViewController <UINavigationControllerDelegate, UIImagePickerControllerDelegate, UIPickerViewDelegate, UIPickerViewDataSource>
 
-- (IBAction)takePicture;
+@property (nonatomic, retain) IBOutlet UIImageView *imageView;
 @end
