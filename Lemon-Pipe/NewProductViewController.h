@@ -8,7 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
-@interface NewProductViewController : UIViewController <UINavigationControllerDelegate, UIImagePickerControllerDelegate, UIPickerViewDelegate, UIPickerViewDataSource>
+@class Product;
+
+@protocol NewProductDelegate <NSObject>
+
+- (void) addNewProduct: (Product *)newProduct;
+
+@end
+
+@interface NewProductViewController : UIViewController <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 
 @property (nonatomic, retain) IBOutlet UIImageView *imageView;
+@property (nonatomic) id<NewProductDelegate> delegate;
+
 @end

@@ -35,7 +35,7 @@
     
     NSString *filePath = [[NSBundle mainBundle] pathForResource:@"Protein" ofType:@"jpg"];
     UIImage *image = [[UIImage alloc] initWithContentsOfFile:filePath];
-    Product *product = [[Product alloc] initWithImage:image MSRP:10.00 Discount:35 Duration:4];
+    Product *product = [[Product alloc] initWithImage:image MSRP:10.00 discount:35 promotionDays:3 promotionHours:0];
     [productLists addObject:product];
         
     // Uncomment the following line to preserve selection between presentations.
@@ -76,7 +76,7 @@
     Product *product = [productLists objectAtIndex:indexPath.row];
     [[cell productImageView] setImage:[product image]];
     [[cell discountLabel] setText:[NSString stringWithFormat:@"%i", product.discount]];
-    [[cell remainningDaysLabel] setText:[NSString stringWithFormat:@"%i", product.duration]];
+    [[cell remainningDaysLabel] setText:[NSString stringWithFormat:@"%i", product.promotionDays]];
     
     return cell;
 }
@@ -135,23 +135,21 @@
      */
 }
 
-/*
+
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    ViewController *controller = [segue destinationViewController];
+    NewProductViewController *controller = [segue destinationViewController];
     controller.delegate = self;
 }
-*/
 
-/*
-#pragma mark - AddItem delegat
-- (void) value:(NSString *)string
+
+
+#pragma mark - New Product delegat
+- (void)addNewProduct:(Product *)newProduct
 {
-    [productLists addObject:string];
+    NSLog(@"New Product");
+    [productLists addObject:newProduct];
     [self.tableView reloadData];
-    NSLog(@"%@", string);
 }
- */
-
 @end

@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "NewProductViewController.h"
 
-@interface ProductsTableViewController : UITableViewController
+@interface ProductsTableViewController : UITableViewController <NewProductDelegate>
 
 @end

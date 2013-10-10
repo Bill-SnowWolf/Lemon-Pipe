@@ -8,21 +8,28 @@
 
 #import "NewProductViewController.h"
 #import "EnterPriceView.h"
-#import "DiscountView.h"
+#import "DurationView.h"
+#import "PreviewView.h"
+#import "Product.h"
 
 @interface NewProductViewController ()
 {
     UIImage *productImage;
     float MSRP;
+    NSInteger discount;
+    NSInteger promotionDays;
+    NSInteger promotionHours;
     bool modified;
     EnterPriceView *enterPriceView;
-    DiscountView *discountView;
+    DurationView *durationView;
+    PreviewView *previewView;
 }
 @end
 
 @implementation NewProductViewController
 
 @synthesize imageView;
+@synthesize delegate;
 
 - (id)initWithCoder:(NSCoder *)aDecoder
 {
@@ -46,14 +53,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    enterPriceView = [[EnterPriceView alloc] initWithFrame:[self.view frame]];
-    [enterPriceView.confirmButton addTarget:self action:@selector(addMSRP:) forControlEvents:UIControlEventTouchUpInside];
-
-    discountView = [[DiscountView alloc] initWithFrame:[self.view frame]];
-    [discountView.pickerView setDelegate:self];
-    [discountView.pickerView setDataSource:self];
-    [discountView.pickerView selectRow:10 inComponent:0 animated:NO];
-	
+    
+    
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -64,7 +66,7 @@
 
 - (void) viewWillAppear:(BOOL)animated
 {
-    [self takePicture];
+   [self takePicture];
 }
 
 - (void) viewWillDisappear:(BOOL)animated
@@ -101,15 +103,61 @@
     [self presentViewController:imagePickerController animated:YES completion:nil];
 }
 
-- (void)addMSRP:(id)sender
+- (void)confirmPrice:(id)sender
 {
-    NSLog(@"Confirm price is %@",[enterPriceView.priceTextField text]);
     MSRP = [[enterPriceView.priceTextField text] floatValue];
+    discount = ([enterPriceView.pickerView selectedRowInComponent:0] + 7) * 5;
     modified = true;
     
-    // Heading to discount page
-    self.view = discountView;
+    // Heading to duration page
+    durationView = [[DurationView alloc] initWithFrame:[self.view frame]];
+    [durationView.confirmButton addTarget:self action:@selector(confirmDuration:) forControlEvents:UIControlEventTouchUpInside];
+    self.view = durationView;
 }
+
+- (void)confirmDuration:(id)sender
+{
+    promotionDays = [durationView.daysPickerView selectedRowInComponent:0];
+    promotionHours = [durationView.hoursPickerView selectedRowInComponent:0];
+    modified = true;
+    
+    // Heading to Preview
+
+    previewView = [[PreviewView alloc] initWithFrame:[self.view frame]];
+    
+    [previewView.discountLabel setText:[NSString stringWithFormat:@"%d", discount]];
+    [previewView.durationLabel setText:[NSString stringWithFormat:@"%d", promotionDays]];
+    [previewView.productImageView setImage:productImage];
+    [previewView.msrpLabel setText:[NSString stringWithFormat:@"$%.2f", MSRP]];
+    [previewView.discountPriceLabel setText:[NSString stringWithFormat:@"$%.2f", MSRP * (1- 0.01*discount)]];
+    
+    [previewView.redoButton addTarget:self action:@selector(redo:) forControlEvents:UIControlEventTouchUpInside];
+    [previewView.postButton addTarget:self action:@selector(post:) forControlEvents:UIControlEventTouchUpInside];
+    
+    self.view = previewView;
+}
+
+- (void)redo:(id)sender
+{
+    modified =false;
+    
+    discount = 0;
+    promotionDays = 0;
+    promotionHours = 0;
+    MSRP = 0;
+    productImage = nil;
+    
+    
+    [self takePicture];
+}
+
+- (void)post:(id)sender
+{
+    Product *newProduct = [[Product alloc] initWithImage:productImage MSRP:MSRP discount:discount promotionDays:promotionDays promotionHours:promotionHours];
+    [self.delegate addNewProduct:newProduct];
+    [self.navigationController popToRootViewControllerAnimated:YES];
+}
+
 
 
 #pragma mark - UIImagePickerController delegate
@@ -137,31 +185,15 @@
     modified = true;
     
     // Heading to MSRP page    
-    [self.view addSubview:enterPriceView];
-    
+    enterPriceView = [[EnterPriceView alloc] initWithFrame:[self.view frame]];
+    [enterPriceView.confirmButton addTarget:self action:@selector(confirmPrice:) forControlEvents:UIControlEventTouchUpInside];
+    self.view = enterPriceView;
 }
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
 {
     [self dismissViewControllerAnimated:NO completion:nil];
     [self.navigationController popToRootViewControllerAnimated:YES];
-}
-
-#pragma mark - UIPickerView Delegate
-
-- (UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view
-{
-    return [[discountView choices] objectAtIndex:row];
-}
-
-- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
-{
-    return 1;
-}
-
-- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
-{
-    return [[discountView choices] count];
 }
 
 @end

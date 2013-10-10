@@ -13,10 +13,11 @@
 @property (nonatomic) float MSRP;
 @property (nonatomic) NSInteger discount;
 @property (nonatomic) float discountPrice;
-@property (nonatomic) NSInteger duration; // Days
+@property (nonatomic) NSInteger promotionDays;
+@property (nonatomic) NSInteger promotionHours;
 @property (nonatomic) NSInteger numOfDayLeft;
 
 - (id) init;
-- (id) initWithImage: (UIImage *)aImage MSRP: (float) retailPrice Discount: (NSInteger) disc Duration: (NSInteger) numOfDays;
+- (id) initWithImage:(UIImage *)aImage MSRP:(float)retailPrice discount:(NSInteger)disc promotionDays:(NSInteger)days promotionHours:(NSInteger) hours;
 
 @end

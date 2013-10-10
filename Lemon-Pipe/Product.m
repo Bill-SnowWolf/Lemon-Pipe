@@ -13,7 +13,8 @@
 @synthesize MSRP;
 @synthesize discount;
 @synthesize discountPrice;
-@synthesize duration;
+@synthesize promotionHours;
+@synthesize promotionDays;
 @synthesize numOfDayLeft;
 
 - (id) init
@@ -24,13 +25,14 @@
         MSRP = 0;
         discount = 0;
         discountPrice = 0;
-        duration = 0;
+        promotionDays = 0;
+        promotionHours = 0;
         numOfDayLeft = 0;
     }
     return self;
 }
 
-- (id) initWithImage:(UIImage *)aImage MSRP:(float)retailPrice Discount:(NSInteger)disc Duration:(NSInteger)numOfDays
+- (id) initWithImage:(UIImage *)aImage MSRP:(float)retailPrice discount:(NSInteger)disc promotionDays:(NSInteger)days promotionHours:(NSInteger) hours
 {
     self = [super init];
     if (self) {
@@ -38,8 +40,8 @@
         MSRP = retailPrice;
         discount = disc;
         discountPrice = MSRP * discount;
-        duration = numOfDays;
-        numOfDayLeft = duration;
+        promotionHours = hours;
+        promotionDays = days;
     }
     return self;
 }

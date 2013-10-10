@@ -9,7 +9,9 @@
 #import "StartupViewController.h"
 
 @interface StartupViewController ()
+{
 
+}
 @end
 
 @implementation StartupViewController
@@ -17,6 +19,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+
 	// Do any additional setup after loading the view, typically from a nib.
 }
 

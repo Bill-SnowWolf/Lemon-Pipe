@@ -8,7 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface EnterPriceView : UIView
+@interface EnterPriceView : UIView <UIPickerViewDataSource, UIPickerViewDelegate>
 @property (nonatomic, retain) UIButton *confirmButton;
 @property (nonatomic, retain) UITextField *priceTextField;
+@property (nonatomic, retain) UIPickerView *pickerView;
+@property (nonatomic) NSMutableArray *choices;
+@property (nonatomic, retain) UILabel *priceLabel;
+
 @end
