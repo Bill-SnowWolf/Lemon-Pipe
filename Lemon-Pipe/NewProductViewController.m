@@ -81,15 +81,13 @@
         //Create camera overlay
 #warning improve camera ui
         [imagePickerController setSourceType:UIImagePickerControllerSourceTypeCamera];
-        [imagePickerController setModalPresentationStyle:UIModalPresentationCurrentContext];
-        
         CGRect f = imagePickerController.view.bounds;
         f.size.height -= imagePickerController.navigationBar.bounds.size.height;
         
         CGFloat barHeight = (f.size.height - f.size.width) / 2;
         
         UIGraphicsBeginImageContext(f.size);
-        [[UIColor colorWithWhite:0.0 alpha:0.8] set];
+        [[UIColor colorWithRed:122 green:10 blue:10 alpha:.8] set];
         UIRectFillUsingBlendMode(CGRectMake(0, 0, f.size.width, barHeight), kCGBlendModeLuminosity);
         UIRectFillUsingBlendMode(CGRectMake(0, f.size.height - barHeight, f.size.width, barHeight), kCGBlendModeNormal);
         UIImage *overlayImage = UIGraphicsGetImageFromCurrentImageContext();

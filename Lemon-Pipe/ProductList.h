@@ -9,5 +9,5 @@
 #import <Foundation/Foundation.h>
 
 @interface ProductList : NSObject
-@property (nonatomic) NSArray *list;
+@property (nonatomic, retain) NSMutableArray *list;
 @end
