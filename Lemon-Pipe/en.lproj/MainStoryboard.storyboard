@@ -517,14 +517,6 @@
                                     <constraint firstItem="6qv-eE-Grn" firstAttribute="trailing" secondItem="yul-4w-4Rh" secondAttribute="trailing" type="default" id="wjS-xV-Dgm"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Choose a duration" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HwH-1b-Csx">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="EeI-zA-hru"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="27"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bsg-E7-8sa">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="29" id="fRL-1R-b08"/>
@@ -557,14 +549,11 @@
                         <constraints>
                             <constraint firstItem="yul-4w-4Rh" firstAttribute="leading" secondItem="vDF-0Q-41I" secondAttribute="leading" type="default" id="Cjj-Vq-vfi"/>
                             <constraint firstAttribute="bottom" secondItem="BS1-nt-4aC" secondAttribute="bottom" constant="65" id="EyM-T1-u5W"/>
-                            <constraint firstAttribute="trailing" secondItem="HwH-1b-Csx" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="JkY-fY-dgw"/>
                             <constraint firstAttribute="bottom" secondItem="Bsg-E7-8sa" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="R5T-n7-UcF"/>
-                            <constraint firstItem="yul-4w-4Rh" firstAttribute="top" secondItem="vDF-0Q-41I" secondAttribute="top" constant="55" id="Reu-C3-MKQ"/>
-                            <constraint firstItem="HwH-1b-Csx" firstAttribute="top" secondItem="vDF-0Q-41I" secondAttribute="top" constant="20" symbolic="YES" type="default" id="WJv-lH-FuL"/>
-                            <constraint firstItem="HwH-1b-Csx" firstAttribute="leading" secondItem="vDF-0Q-41I" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="YF1-G7-nP0"/>
                             <constraint firstItem="BS1-nt-4aC" firstAttribute="centerX" secondItem="Bsg-E7-8sa" secondAttribute="centerX" type="default" id="aeG-jv-2IL"/>
                             <constraint firstItem="yul-4w-4Rh" firstAttribute="trailing" secondItem="vDF-0Q-41I" secondAttribute="trailing" type="default" id="bJD-6f-2zi"/>
                             <constraint firstItem="Pk5-RY-WaN" firstAttribute="top" secondItem="yul-4w-4Rh" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="fls-Vd-i5Q"/>
+                            <constraint firstItem="yul-4w-4Rh" firstAttribute="top" secondItem="vDF-0Q-41I" secondAttribute="top" type="default" id="gGq-IE-5FO"/>
                             <constraint firstItem="BS1-nt-4aC" firstAttribute="centerX" secondItem="Pk5-RY-WaN" secondAttribute="centerX" type="default" id="jnf-ZY-EIO"/>
                             <constraint firstItem="BS1-nt-4aC" firstAttribute="top" secondItem="Pk5-RY-WaN" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="nyv-uW-GHs"/>
                             <constraint firstItem="yul-4w-4Rh" firstAttribute="centerX" secondItem="Pk5-RY-WaN" secondAttribute="centerX" type="default" id="oTq-uK-Pd9"/>
@@ -581,9 +570,10 @@
             <objects>
                 <navigationController id="aD5-p5-wBz" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="MIc-JQ-p2G">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="MIc-JQ-p2G" customClass="CustomNavigationBar">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.94340214416058399" green="0.39215686274509803" blue="0.19607843137254902" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -596,6 +586,9 @@
         </scene>
     </scenes>
     <classes>
+        <class className="CustomNavigationBar" superclassName="UINavigationBar">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CustomNavigationBar.h"/>
+        </class>
         <class className="NSLayoutConstraint" superclassName="NSObject">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
         </class>

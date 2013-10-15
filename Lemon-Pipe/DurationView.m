@@ -28,12 +28,6 @@
 
 - (void) initializeView
 {
-    UILabel *durationTitleLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, 20, 280, 21)];
-    [durationTitleLabel setText:@"Choose a duration"];
-    [durationTitleLabel setFont:[UIFont fontWithName:@"Arial" size:27]];
-    [durationTitleLabel setTextAlignment:NSTextAlignmentCenter];
-    [self addSubview:durationTitleLabel];
-    
     UIView *subview = [[UIView alloc] initWithFrame:CGRectMake(0, 55, 320, 240)];
     [subview setBackgroundColor:[UIColor colorWithWhite:0.9 alpha:1.0]];
     

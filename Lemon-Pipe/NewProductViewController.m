@@ -11,6 +11,7 @@
 #import "DurationView.h"
 #import "PreviewView.h"
 #import "Product.h"
+#import "CustomOverlayView.h"
 
 @interface NewProductViewController ()
 {
@@ -23,6 +24,7 @@
     EnterPriceView *enterPriceView;
     DurationView *durationView;
     PreviewView *previewView;
+    UIImagePickerController *imagePickerController;
 }
 @end
 
@@ -54,8 +56,8 @@
 {
     [super viewDidLoad];
     
-    
-    
+    // Hide back button
+    self.navigationItem.hidesBackButton = YES;
 }
 
 - (void)didReceiveMemoryWarning
@@ -66,38 +68,28 @@
 
 - (void) viewWillAppear:(BOOL)animated
 {
-   [self takePicture];
+   [self openCamera];
 }
 
 - (void) viewWillDisappear:(BOOL)animated
 {
-    NSLog(@"Dismiss");
+    
 }
 
-- (void) takePicture
+- (void) openCamera
 {
-    UIImagePickerController *imagePickerController = [[UIImagePickerController alloc] init];
+    imagePickerController = [[UIImagePickerController alloc] init];
     if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
         //Create camera overlay
-#warning improve camera ui
         [imagePickerController setSourceType:UIImagePickerControllerSourceTypeCamera];
         [imagePickerController setModalPresentationStyle:UIModalPresentationCurrentContext];
         
-        CGRect f = imagePickerController.view.bounds;
-        f.size.height -= imagePickerController.navigationBar.bounds.size.height;
+        imagePickerController.showsCameraControls = NO;
         
-        CGFloat barHeight = (f.size.height - f.size.width) / 2;
+        CustomOverlayView *overlayView = [[CustomOverlayView alloc] initWithFrame:imagePickerController.view.frame];
+        [overlayView.takePhotoButton addTarget:self action:@selector(takePhoto:) forControlEvents:UIControlEventTouchUpInside];
         
-        UIGraphicsBeginImageContext(f.size);
-        [[UIColor colorWithWhite:0.0 alpha:0.8] set];
-        UIRectFillUsingBlendMode(CGRectMake(0, 0, f.size.width, barHeight), kCGBlendModeLuminosity);
-        UIRectFillUsingBlendMode(CGRectMake(0, f.size.height - barHeight, f.size.width, barHeight), kCGBlendModeNormal);
-        UIImage *overlayImage = UIGraphicsGetImageFromCurrentImageContext();
-        UIGraphicsEndImageContext();
-        
-        UIImageView *overlayIV = [[UIImageView alloc] initWithFrame:f];
-        overlayIV.image = overlayImage;
-        [imagePickerController.cameraOverlayView addSubview:overlayIV];
+        [imagePickerController.cameraOverlayView addSubview:overlayView];
     } else
         [imagePickerController setSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
     
@@ -115,6 +107,8 @@
     durationView = [[DurationView alloc] initWithFrame:[self.view frame]];
     [durationView.confirmButton addTarget:self action:@selector(confirmDuration:) forControlEvents:UIControlEventTouchUpInside];
     self.view = durationView;
+    
+    [self.navigationItem setTitle:@"Choose a Duration"];
 }
 
 - (void)confirmDuration:(id)sender
@@ -150,7 +144,7 @@
     productImage = nil;
     
     
-    [self takePicture];
+    [self openCamera];
 }
 
 - (void)post:(id)sender
@@ -160,6 +154,11 @@
     [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
+
+- (void)takePhoto:(id)sender
+{
+    [imagePickerController takePicture];
+}
 
 
 #pragma mark - UIImagePickerController delegate
@@ -190,6 +189,7 @@
     enterPriceView = [[EnterPriceView alloc] initWithFrame:[self.view frame]];
     [enterPriceView.confirmButton addTarget:self action:@selector(confirmPrice:) forControlEvents:UIControlEventTouchUpInside];
     self.view = enterPriceView;
+    [self.navigationItem setTitle:@"Price & Discount"];
 }
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
