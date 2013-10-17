@@ -128,8 +128,15 @@
     [endDateLabel setFont:[UIFont fontWithName:@"Arial" size:20]];
     [self addSubview:endDateLabel];
     
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"ButtonBackground" ofType:@"png"];
+    UIImage *buttonBackground = [[UIImage imageWithContentsOfFile:filePath] resizableImageWithCapInsets:UIEdgeInsetsMake(10, 20, 20, 20)];
+    filePath = [[NSBundle mainBundle] pathForResource:@"ButtonBackgroundHighlighted" ofType:@"png"];
+    UIImage *buttonBackgroundHighlighted = [[UIImage imageWithContentsOfFile:filePath] resizableImageWithCapInsets:UIEdgeInsetsMake(10, 20, 20, 20)];
+
     
-    confirmButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    confirmButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [confirmButton setBackgroundImage:buttonBackground forState:UIControlStateNormal];
+    [confirmButton setBackgroundImage:buttonBackgroundHighlighted forState:UIControlStateHighlighted];
     [confirmButton setFrame:CGRectMake(50., 360., 220., 30.)];
     [confirmButton setTitle:@"confirm" forState:UIControlStateNormal];
     [[confirmButton titleLabel] setFont:[UIFont fontWithName:@"Helvetica-Bold" size:18.]];

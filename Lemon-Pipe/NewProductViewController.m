@@ -12,6 +12,7 @@
 #import "PreviewView.h"
 #import "Product.h"
 #import "CustomOverlayView.h"
+#import "EditPhotoView.h"
 
 @interface NewProductViewController ()
 {
@@ -21,6 +22,7 @@
     NSInteger promotionDays;
     NSInteger promotionHours;
     bool modified;
+    EditPhotoView *editPhotoView;
     EnterPriceView *enterPriceView;
     DurationView *durationView;
     PreviewView *previewView;
@@ -76,6 +78,8 @@
     
 }
 
+#pragma mark - View Actions
+// Take Photo View
 - (void) openCamera
 {
     imagePickerController = [[UIImagePickerController alloc] init];
@@ -97,6 +101,29 @@
     [self presentViewController:imagePickerController animated:YES completion:nil];
 }
 
+- (void)takePhoto:(id)sender
+{
+    [imagePickerController takePicture];
+}
+
+// Edit Photo View
+- (void)useImage:(id)sender
+{
+    // Heading to MSRP page
+    enterPriceView = [[EnterPriceView alloc] initWithFrame:[self.view frame]];
+    [enterPriceView.confirmButton addTarget:self action:@selector(confirmPrice:) forControlEvents:UIControlEventTouchUpInside];
+    self.view = enterPriceView;
+    [self.navigationItem setTitle:@"Price & Discount"];
+}
+
+- (void)retakeImage:(id)sender
+{
+    [self openCamera];
+}
+
+
+// Price & Discount View
+
 - (void)confirmPrice:(id)sender
 {
     MSRP = [[enterPriceView.priceTextField text] floatValue];
@@ -110,6 +137,8 @@
     
     [self.navigationItem setTitle:@"Choose a Duration"];
 }
+
+// Duration View
 
 - (void)confirmDuration:(id)sender
 {
@@ -133,6 +162,7 @@
     self.view = previewView;
 }
 
+// Preview View
 - (void)redo:(id)sender
 {
     modified =false;
@@ -155,10 +185,6 @@
 }
 
 
-- (void)takePhoto:(id)sender
-{
-    [imagePickerController takePicture];
-}
 
 
 #pragma mark - UIImagePickerController delegate
@@ -169,27 +195,30 @@
     CGSize imageSize = image.size;
     CGFloat width = imageSize.width;
     CGFloat height = imageSize.height;
-    if (width != height) {
-        CGFloat newDimension = MIN(width, height);
-        CGFloat widthOffset = (width - newDimension) / 2;
-        CGFloat heightOffset = (height - newDimension) / 2;
-        UIGraphicsBeginImageContextWithOptions(CGSizeMake(newDimension, newDimension), NO, 0.);
-        [image drawAtPoint:CGPointMake(-widthOffset, -heightOffset)
+    NSLog(@"width = %.2f, height = %.2f", width, height);
+    CGFloat newDimension = 680;
+    CGFloat widthOffset = 20;
+    CGFloat heightOffset = 135;
+    UIGraphicsBeginImageContextWithOptions(CGSizeMake(newDimension, newDimension), NO, 0.);
+    [image drawAtPoint:CGPointMake(-widthOffset, -heightOffset)
                  blendMode:kCGBlendModeCopy
                      alpha:1.];
-        image = UIGraphicsGetImageFromCurrentImageContext();
-        UIGraphicsEndImageContext();
-    }
+    image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
     
     productImage = image;
     [self dismissViewControllerAnimated:NO completion:nil];
     modified = true;
     
-    // Heading to MSRP page    
-    enterPriceView = [[EnterPriceView alloc] initWithFrame:[self.view frame]];
-    [enterPriceView.confirmButton addTarget:self action:@selector(confirmPrice:) forControlEvents:UIControlEventTouchUpInside];
-    self.view = enterPriceView;
-    [self.navigationItem setTitle:@"Price & Discount"];
+    // Show Edit Photo View
+    [self.navigationItem setTitle:@"Edit Photo"];
+    editPhotoView = [[EditPhotoView alloc] initWithFrame:self.view.frame image:productImage];
+    
+    [editPhotoView.retakeButton addTarget:self action:@selector(retakeImage:) forControlEvents:UIControlEventTouchUpInside];
+    [editPhotoView.useButton addTarget:self action:@selector(useImage:) forControlEvents:UIControlEventTouchUpInside];
+    
+    self.view = editPhotoView;
+
 }
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker

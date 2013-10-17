@@ -56,18 +56,18 @@
     [self addSubview:discountTitleLabel];
     
     
-    pickerView = [[UIPickerView alloc] initWithFrame:CGRectMake(0, 0, 100, 1000)];
+    pickerView = [[UIPickerView alloc] initWithFrame:CGRectMake(0, 0, 320, 1000)];
     pickerView.showsSelectionIndicator = true;
     pickerView.delegate = self;
     pickerView.dataSource = self;
     
     CGAffineTransform rotate = CGAffineTransformMakeRotation(-3.14/2);
-    rotate = CGAffineTransformScale(rotate, 1.0, 1.5);
+    rotate = CGAffineTransformScale(rotate, 0.25, 1.4);
     
     [self.pickerView setTransform:rotate];
     [self.pickerView setCenter:CGPointMake(160, 214)];
     CGAffineTransform rotateItem = CGAffineTransformMakeRotation(3.14/2);
-    rotateItem = CGAffineTransformScale(rotateItem, 0.7, 1.0);
+    rotateItem = CGAffineTransformScale(rotateItem, 0.7, 4.0);
     choices = [[NSMutableArray alloc] initWithCapacity:20];
     
     for (int i=7;i<=20;i++) {
@@ -104,10 +104,19 @@
     [priceSubview addSubview:priceLabel];
     
     [self addSubview:priceSubview];
+
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"ButtonBackground" ofType:@"png"];
+    UIImage *buttonBackground = [[UIImage imageWithContentsOfFile:filePath] resizableImageWithCapInsets:UIEdgeInsetsMake(10, 20, 20, 20)];
+
+
+    filePath = [[NSBundle mainBundle] pathForResource:@"ButtonBackgroundHighlighted" ofType:@"png"];
+    UIImage *buttonBackgroundHighlighted = [[UIImage imageWithContentsOfFile:filePath] resizableImageWithCapInsets:UIEdgeInsetsMake(10, 20, 20, 20)];
     
-    confirmButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    [confirmButton setFrame:CGRectMake(50., 360., 220., 30.)];
+    confirmButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [confirmButton setBackgroundImage:buttonBackground forState:UIControlStateNormal];
+    [confirmButton setFrame:CGRectMake(50., 360., 220., 40.)];
     [confirmButton setTitle:@"confirm" forState:UIControlStateNormal];
+    [confirmButton setBackgroundImage:buttonBackgroundHighlighted forState:UIControlStateHighlighted];
     [[confirmButton titleLabel] setFont:[UIFont fontWithName:@"Helvetica-Bold" size:18.]];
     [self addSubview:confirmButton];
     

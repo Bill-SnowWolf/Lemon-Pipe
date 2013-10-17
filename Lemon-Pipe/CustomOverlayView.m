@@ -33,9 +33,20 @@
     
     [self addSubview:navBar];
     
-    takePhotoButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    [takePhotoButton setTitle:@"Take" forState:UIControlStateNormal];
-    [takePhotoButton setFrame:CGRectMake(124, 380, 73, 44)];
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"ButtonBackground" ofType:@"png"];
+    UIImage *buttonBackground = [[UIImage imageWithContentsOfFile:filePath] resizableImageWithCapInsets:UIEdgeInsetsMake(10, 20, 20, 20)];
+
+    filePath = [[NSBundle mainBundle] pathForResource:@"ButtonBackgroundHighlighted" ofType:@"png"];
+    UIImage *buttonBackgroundHighlighted = [[UIImage imageWithContentsOfFile:filePath] resizableImageWithCapInsets:UIEdgeInsetsMake(10, 20, 20, 20)];
+    
+    filePath = [[NSBundle mainBundle] pathForResource:@"CameraIcon-White" ofType:@"png"];
+    UIImage *cameraIcon = [UIImage imageWithContentsOfFile:filePath];
+    
+    takePhotoButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [takePhotoButton setBackgroundImage:buttonBackground forState:UIControlStateNormal];
+    [takePhotoButton setBackgroundImage:buttonBackgroundHighlighted forState:UIControlStateHighlighted];
+    [takePhotoButton setImage:cameraIcon forState:UIControlStateNormal];
+    [takePhotoButton setFrame:CGRectMake(110, 390, 100, 40)];
     
     
     CGRect f = self.frame;
@@ -46,11 +57,20 @@
     UIGraphicsBeginImageContext(f.size);
     
     CGContextRef myContext =UIGraphicsGetCurrentContext();
-    CGContextSetRGBFillColor(myContext, 0.3, 0.3, 0.3, 1);
-    CGContextFillRect(myContext, CGRectMake(0, 44, 320, 16));
-    CGContextFillRect(myContext, CGRectMake(0, 60, 10, 300));
-    CGContextFillRect(myContext, CGRectMake(310, 60, 10, 300));
-    CGContextFillRect(myContext, CGRectMake(0, 360, 320, 110));
+//    CGContextSetRGBFillColor(myContext, 0.3, 0.3, 0.3, 1);
+    [[UIColor colorWithWhite:0.3 alpha:0.8] set];
+    UIRectFillUsingBlendMode(CGRectMake(0, 44, 320, 16), kCGBlendModeLuminosity);
+    UIRectFillUsingBlendMode(CGRectMake(0, 60, 10, 300), kCGBlendModeLuminosity);
+    UIRectFillUsingBlendMode(CGRectMake(310, 60, 10, 300), kCGBlendModeLuminosity);
+    UIRectFillUsingBlendMode(CGRectMake(0, 360, 320, 110), kCGBlendModeLuminosity);
+
+    //    UIRectFillUsingBlendMode(CGRectMake(0, f.size.height - barHeight, f.size.width, barHeight), kCGBlendModeNormal);
+
+    
+//    CGContextFillRect(myContext, CGRectMake(0, 44, 320, 16));
+//    CGContextFillRect(myContext, CGRectMake(0, 60, 10, 300));
+//    CGContextFillRect(myContext, CGRectMake(310, 60, 10, 300));
+//    CGContextFillRect(myContext, CGRectMake(0, 360, 320, 110));
     
     CGContextBeginPath(myContext);
     CGContextMoveToPoint(myContext, 11, 61);
@@ -69,9 +89,6 @@
     CGContextStrokePath(myContext);
     
     
-    //    [[UIColor colorWithWhite:0.0 alpha:0.8] set];
-    //    UIRectFillUsingBlendMode(CGRectMake(0, 0, f.size.width, barHeight), kCGBlendModeLuminosity);
-    //    UIRectFillUsingBlendMode(CGRectMake(0, f.size.height - barHeight, f.size.width, barHeight), kCGBlendModeNormal);
     UIImage *overlayImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     

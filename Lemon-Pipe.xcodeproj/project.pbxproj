@@ -7,12 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B2476863180EE1E100002C85 /* EditPhotoView.m in Sources */ = {isa = PBXBuildFile; fileRef = B2476862180EE1E100002C85 /* EditPhotoView.m */; };
 		B26A8E01180DA6A400377C3B /* CustomNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = B26A8E00180DA6A400377C3B /* CustomNavigationBar.m */; };
-		B26A8E03180DA6B400377C3B /* NavBarImage.png in Resources */ = {isa = PBXBuildFile; fileRef = B26A8E02180DA6B400377C3B /* NavBarImage.png */; };
 		B26A8E09180DCD5200377C3B /* CustomOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = B26A8E08180DCD5200377C3B /* CustomOverlayView.m */; };
 		B282FA9818046E0D0011C211 /* EnterPriceView.m in Sources */ = {isa = PBXBuildFile; fileRef = B282FA9718046E0D0011C211 /* EnterPriceView.m */; };
 		B2B304C01805B6B700496705 /* DurationView.m in Sources */ = {isa = PBXBuildFile; fileRef = B2B304BF1805B6B700496705 /* DurationView.m */; };
 		B2B304C31805E13400496705 /* PreviewView.m in Sources */ = {isa = PBXBuildFile; fileRef = B2B304C21805E13400496705 /* PreviewView.m */; };
+		B2C31A65180F0FB80069702B /* NavBarImage.png in Resources */ = {isa = PBXBuildFile; fileRef = B2C31A64180F0FB80069702B /* NavBarImage.png */; };
+		B2C31A99180F20C90069702B /* ButtonBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = B2C31A98180F20C90069702B /* ButtonBackground.png */; };
+		B2C31A9B180F24C50069702B /* CameraIcon-White.png in Resources */ = {isa = PBXBuildFile; fileRef = B2C31A9A180F24C50069702B /* CameraIcon-White.png */; };
+		B2C31A9D180F26AC0069702B /* ButtonBackgroundHighlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = B2C31A9C180F26AC0069702B /* ButtonBackgroundHighlighted.png */; };
 		B2DA073F1802F9C300CAF01A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2DA073E1802F9C300CAF01A /* UIKit.framework */; };
 		B2DA07411802F9C300CAF01A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2DA07401802F9C300CAF01A /* Foundation.framework */; };
 		B2DA07431802F9C300CAF01A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2DA07421802F9C300CAF01A /* CoreGraphics.framework */; };
@@ -25,7 +29,6 @@
 		B2DA07581802F9C300CAF01A /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2DA07561802F9C300CAF01A /* MainStoryboard.storyboard */; };
 		B2DA075B1802F9C300CAF01A /* StartupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2DA075A1802F9C300CAF01A /* StartupViewController.m */; };
 		B2DA07631803016300CAF01A /* ProductsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2DA07621803016300CAF01A /* ProductsTableViewController.m */; };
-		B2DA07661803020C00CAF01A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2DA07651803020C00CAF01A /* ViewController.m */; };
 		B2DA076C18032F6300CAF01A /* Product.m in Sources */ = {isa = PBXBuildFile; fileRef = B2DA076B18032F6300CAF01A /* Product.m */; };
 		B2DA076F1803336800CAF01A /* ProductList.m in Sources */ = {isa = PBXBuildFile; fileRef = B2DA076E1803336800CAF01A /* ProductList.m */; };
 		B2DA0772180333B300CAF01A /* NewProductViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2DA0771180333B300CAF01A /* NewProductViewController.m */; };
@@ -34,9 +37,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B2476861180EE1E100002C85 /* EditPhotoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditPhotoView.h; sourceTree = "<group>"; };
+		B2476862180EE1E100002C85 /* EditPhotoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditPhotoView.m; sourceTree = "<group>"; };
 		B26A8DFF180DA6A400377C3B /* CustomNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomNavigationBar.h; sourceTree = "<group>"; };
 		B26A8E00180DA6A400377C3B /* CustomNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomNavigationBar.m; sourceTree = "<group>"; };
-		B26A8E02180DA6B400377C3B /* NavBarImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NavBarImage.png; sourceTree = "<group>"; };
 		B26A8E07180DCD5200377C3B /* CustomOverlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomOverlayView.h; sourceTree = "<group>"; };
 		B26A8E08180DCD5200377C3B /* CustomOverlayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomOverlayView.m; sourceTree = "<group>"; };
 		B282FA9618046E0D0011C211 /* EnterPriceView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EnterPriceView.h; sourceTree = "<group>"; };
@@ -45,6 +49,10 @@
 		B2B304BF1805B6B700496705 /* DurationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DurationView.m; sourceTree = "<group>"; };
 		B2B304C11805E13400496705 /* PreviewView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreviewView.h; sourceTree = "<group>"; };
 		B2B304C21805E13400496705 /* PreviewView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreviewView.m; sourceTree = "<group>"; };
+		B2C31A64180F0FB80069702B /* NavBarImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NavBarImage.png; sourceTree = "<group>"; };
+		B2C31A98180F20C90069702B /* ButtonBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ButtonBackground.png; sourceTree = "<group>"; };
+		B2C31A9A180F24C50069702B /* CameraIcon-White.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "CameraIcon-White.png"; sourceTree = "<group>"; };
+		B2C31A9C180F26AC0069702B /* ButtonBackgroundHighlighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ButtonBackgroundHighlighted.png; sourceTree = "<group>"; };
 		B2DA073B1802F9C300CAF01A /* Lemon-Pipe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Lemon-Pipe.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2DA073E1802F9C300CAF01A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		B2DA07401802F9C300CAF01A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -63,8 +71,6 @@
 		B2DA075A1802F9C300CAF01A /* StartupViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StartupViewController.m; sourceTree = "<group>"; };
 		B2DA07611803016300CAF01A /* ProductsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductsTableViewController.h; sourceTree = "<group>"; };
 		B2DA07621803016300CAF01A /* ProductsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductsTableViewController.m; sourceTree = "<group>"; };
-		B2DA07641803020C00CAF01A /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		B2DA07651803020C00CAF01A /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		B2DA076A18032F6300CAF01A /* Product.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Product.h; sourceTree = "<group>"; };
 		B2DA076B18032F6300CAF01A /* Product.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Product.m; sourceTree = "<group>"; };
 		B2DA076D1803336800CAF01A /* ProductList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductList.h; sourceTree = "<group>"; };
@@ -95,6 +101,8 @@
 			children = (
 				B2DA077318034E0000CAF01A /* ProductsTableViewCell.h */,
 				B2DA077418034E0100CAF01A /* ProductsTableViewCell.m */,
+				B2476861180EE1E100002C85 /* EditPhotoView.h */,
+				B2476862180EE1E100002C85 /* EditPhotoView.m */,
 				B282FA9618046E0D0011C211 /* EnterPriceView.h */,
 				B282FA9718046E0D0011C211 /* EnterPriceView.m */,
 				B2B304BE1805B6B700496705 /* DurationView.h */,
@@ -156,8 +164,11 @@
 		B2DA07451802F9C300CAF01A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				B2C31A9A180F24C50069702B /* CameraIcon-White.png */,
+				B2C31A64180F0FB80069702B /* NavBarImage.png */,
+				B2C31A98180F20C90069702B /* ButtonBackground.png */,
+				B2C31A9C180F26AC0069702B /* ButtonBackgroundHighlighted.png */,
 				B2DA077718035FD300CAF01A /* Protein.jpg */,
-				B26A8E02180DA6B400377C3B /* NavBarImage.png */,
 				B2DA07461802F9C300CAF01A /* Lemon-Pipe-Info.plist */,
 				B2DA07471802F9C300CAF01A /* InfoPlist.strings */,
 				B2DA074A1802F9C300CAF01A /* main.m */,
@@ -178,8 +189,6 @@
 				B2DA07621803016300CAF01A /* ProductsTableViewController.m */,
 				B2DA0770180333B200CAF01A /* NewProductViewController.h */,
 				B2DA0771180333B300CAF01A /* NewProductViewController.m */,
-				B2DA07641803020C00CAF01A /* ViewController.h */,
-				B2DA07651803020C00CAF01A /* ViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -241,7 +250,10 @@
 				B2DA07551802F9C300CAF01A /* Default-568h@2x.png in Resources */,
 				B2DA07581802F9C300CAF01A /* MainStoryboard.storyboard in Resources */,
 				B2DA077818035FD300CAF01A /* Protein.jpg in Resources */,
-				B26A8E03180DA6B400377C3B /* NavBarImage.png in Resources */,
+				B2C31A65180F0FB80069702B /* NavBarImage.png in Resources */,
+				B2C31A99180F20C90069702B /* ButtonBackground.png in Resources */,
+				B2C31A9B180F24C50069702B /* CameraIcon-White.png in Resources */,
+				B2C31A9D180F26AC0069702B /* ButtonBackgroundHighlighted.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,7 +268,6 @@
 				B2DA074F1802F9C300CAF01A /* AppDelegate.m in Sources */,
 				B2DA075B1802F9C300CAF01A /* StartupViewController.m in Sources */,
 				B2DA07631803016300CAF01A /* ProductsTableViewController.m in Sources */,
-				B2DA07661803020C00CAF01A /* ViewController.m in Sources */,
 				B2DA076C18032F6300CAF01A /* Product.m in Sources */,
 				B2DA076F1803336800CAF01A /* ProductList.m in Sources */,
 				B2DA0772180333B300CAF01A /* NewProductViewController.m in Sources */,
@@ -266,6 +277,7 @@
 				B2B304C31805E13400496705 /* PreviewView.m in Sources */,
 				B26A8E01180DA6A400377C3B /* CustomNavigationBar.m in Sources */,
 				B26A8E09180DCD5200377C3B /* CustomOverlayView.m in Sources */,
+				B2476863180EE1E100002C85 /* EditPhotoView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
