@@ -57,6 +57,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [[UINavigationBar appearance] setTitleTextAttributes:
+     [NSDictionary dictionaryWithObjectsAndKeys:
+      [UIFont fontWithName:@"MarkoOne-Regular" size:24.0], UITextAttributeFont,nil]];
     
     // Hide back button
     self.navigationItem.hidesBackButton = YES;
@@ -118,6 +121,7 @@
 
 - (void)retakeImage:(id)sender
 {
+    productImage = nil;
     [self openCamera];
 }
 
@@ -148,16 +152,14 @@
     
     // Heading to Preview
 
-    previewView = [[PreviewView alloc] initWithFrame:[self.view frame]];
+    previewView = [[PreviewView alloc] initWithFrame:[self.view frame] discount:discount msrp:MSRP productImage:productImage promotionDays:promotionDays promotionHours:promotionHours];
     
-    [previewView.discountLabel setText:[NSString stringWithFormat:@"%d", discount]];
-    [previewView.durationLabel setText:[NSString stringWithFormat:@"%d", promotionDays]];
-    [previewView.productImageView setImage:productImage];
-    [previewView.msrpLabel setText:[NSString stringWithFormat:@"$%.2f", MSRP]];
     [previewView.discountPriceLabel setText:[NSString stringWithFormat:@"$%.2f", MSRP * (1- 0.01*discount)]];
     
     [previewView.redoButton addTarget:self action:@selector(redo:) forControlEvents:UIControlEventTouchUpInside];
     [previewView.postButton addTarget:self action:@selector(post:) forControlEvents:UIControlEventTouchUpInside];
+    
+    [self.navigationItem setTitle:@"Promotion Preview"];
     
     self.view = previewView;
 }
@@ -195,18 +197,26 @@
     CGSize imageSize = image.size;
     CGFloat width = imageSize.width;
     CGFloat height = imageSize.height;
-    NSLog(@"width = %.2f, height = %.2f", width, height);
-    CGFloat newDimension = 680;
-    CGFloat widthOffset = 20;
-    CGFloat heightOffset = 135;
-    UIGraphicsBeginImageContextWithOptions(CGSizeMake(newDimension, newDimension), NO, 0.);
+    NSLog(@"width = %.2f, height = %.2f %.2f", width, height, [[UIScreen mainScreen] scale]);
+    CGFloat newDimension = 2360;
+    CGFloat widthOffset = 20 * [[UIScreen mainScreen] scale];
+    CGFloat heightOffset = 135 * [[UIScreen mainScreen] scale];
+    
+    CGImageRef imageRef = CGImageCreateWithImageInRect([image CGImage], CGRectMake(40, 300, 2360, 2360));
+    // or use the UIImage wherever you like
+    image = [UIImage imageWithCGImage:imageRef scale:1.0 orientation:UIImageOrientationRight];
+    CGImageRelease(imageRef);
+    
+    productImage = image;
+    /*    UIGraphicsBeginImageContextWithOptions(CGSizeMake(newDimension, newDimension), NO, 0.);
+
     [image drawAtPoint:CGPointMake(-widthOffset, -heightOffset)
                  blendMode:kCGBlendModeCopy
                      alpha:1.];
-    image = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
     
-    productImage = image;
+    productImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+*/
     [self dismissViewControllerAnimated:NO completion:nil];
     modified = true;
     

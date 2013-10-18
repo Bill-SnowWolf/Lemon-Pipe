@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		B2476863180EE1E100002C85 /* EditPhotoView.m in Sources */ = {isa = PBXBuildFile; fileRef = B2476862180EE1E100002C85 /* EditPhotoView.m */; };
+		B265FD2D18104E28008096CB /* GradientView.m in Sources */ = {isa = PBXBuildFile; fileRef = B265FD2C18104E28008096CB /* GradientView.m */; };
+		B265FD2F18104E79008096CB /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B265FD2E18104E78008096CB /* QuartzCore.framework */; };
 		B26A8E01180DA6A400377C3B /* CustomNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = B26A8E00180DA6A400377C3B /* CustomNavigationBar.m */; };
 		B26A8E09180DCD5200377C3B /* CustomOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = B26A8E08180DCD5200377C3B /* CustomOverlayView.m */; };
 		B282FA9818046E0D0011C211 /* EnterPriceView.m in Sources */ = {isa = PBXBuildFile; fileRef = B282FA9718046E0D0011C211 /* EnterPriceView.m */; };
@@ -17,6 +19,23 @@
 		B2C31A99180F20C90069702B /* ButtonBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = B2C31A98180F20C90069702B /* ButtonBackground.png */; };
 		B2C31A9B180F24C50069702B /* CameraIcon-White.png in Resources */ = {isa = PBXBuildFile; fileRef = B2C31A9A180F24C50069702B /* CameraIcon-White.png */; };
 		B2C31A9D180F26AC0069702B /* ButtonBackgroundHighlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = B2C31A9C180F26AC0069702B /* ButtonBackgroundHighlighted.png */; };
+		B2C6FE4B18118252000C92D8 /* BuyButton.png in Resources */ = {isa = PBXBuildFile; fileRef = B2C6FE4818118252000C92D8 /* BuyButton.png */; };
+		B2C6FE4C18118252000C92D8 /* Stock.png in Resources */ = {isa = PBXBuildFile; fileRef = B2C6FE4918118252000C92D8 /* Stock.png */; };
+		B2C6FE4D18118252000C92D8 /* TimerBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = B2C6FE4A18118252000C92D8 /* TimerBackground.png */; };
+		B2C6FE4F18119FD4000C92D8 /* PercentOff.png in Resources */ = {isa = PBXBuildFile; fileRef = B2C6FE4E18119FD4000C92D8 /* PercentOff.png */; };
+		B2C6FE511811A322000C92D8 /* PlantagenetCherokee.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B2C6FE501811A322000C92D8 /* PlantagenetCherokee.ttf */; };
+		B2C6FE551811AC5A000C92D8 /* Ubuntu-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B2C6FE541811AC5A000C92D8 /* Ubuntu-Medium.ttf */; };
+		B2C6FE571811B49C000C92D8 /* Ubuntu-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B2C6FE561811B49C000C92D8 /* Ubuntu-Bold.ttf */; };
+		B2C6FE591811B5EA000C92D8 /* BerlinSansFBRegular.TTF in Resources */ = {isa = PBXBuildFile; fileRef = B2C6FE581811B5EA000C92D8 /* BerlinSansFBRegular.TTF */; };
+		B2C6FE5B1811B691000C92D8 /* Ubuntu-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B2C6FE5A1811B691000C92D8 /* Ubuntu-Regular.ttf */; };
+		B2C6FE5D1811B72C000C92D8 /* BerlinSansFBDemi.TTF in Resources */ = {isa = PBXBuildFile; fileRef = B2C6FE5C1811B72C000C92D8 /* BerlinSansFBDemi.TTF */; };
+		B2C6FE5F1811C164000C92D8 /* MarkoOne-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B2C6FE5E1811C164000C92D8 /* MarkoOne-Regular.ttf */; };
+		B2C6FE681811D418000C92D8 /* LemonBGDuration1.png in Resources */ = {isa = PBXBuildFile; fileRef = B2C6FE621811D418000C92D8 /* LemonBGDuration1.png */; };
+		B2C6FE691811D418000C92D8 /* LemonBGDuration2.png in Resources */ = {isa = PBXBuildFile; fileRef = B2C6FE631811D418000C92D8 /* LemonBGDuration2.png */; };
+		B2C6FE6A1811D418000C92D8 /* LemonBGDuration3.png in Resources */ = {isa = PBXBuildFile; fileRef = B2C6FE641811D418000C92D8 /* LemonBGDuration3.png */; };
+		B2C6FE6B1811D418000C92D8 /* LemonBGPrice1.png in Resources */ = {isa = PBXBuildFile; fileRef = B2C6FE651811D418000C92D8 /* LemonBGPrice1.png */; };
+		B2C6FE6C1811D418000C92D8 /* LemonBGPrice2.png in Resources */ = {isa = PBXBuildFile; fileRef = B2C6FE661811D418000C92D8 /* LemonBGPrice2.png */; };
+		B2C6FE6D1811D418000C92D8 /* LemonBGPrice3.png in Resources */ = {isa = PBXBuildFile; fileRef = B2C6FE671811D418000C92D8 /* LemonBGPrice3.png */; };
 		B2DA073F1802F9C300CAF01A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2DA073E1802F9C300CAF01A /* UIKit.framework */; };
 		B2DA07411802F9C300CAF01A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2DA07401802F9C300CAF01A /* Foundation.framework */; };
 		B2DA07431802F9C300CAF01A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2DA07421802F9C300CAF01A /* CoreGraphics.framework */; };
@@ -39,6 +58,9 @@
 /* Begin PBXFileReference section */
 		B2476861180EE1E100002C85 /* EditPhotoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditPhotoView.h; sourceTree = "<group>"; };
 		B2476862180EE1E100002C85 /* EditPhotoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditPhotoView.m; sourceTree = "<group>"; };
+		B265FD2B18104E28008096CB /* GradientView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GradientView.h; sourceTree = "<group>"; };
+		B265FD2C18104E28008096CB /* GradientView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GradientView.m; sourceTree = "<group>"; };
+		B265FD2E18104E78008096CB /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		B26A8DFF180DA6A400377C3B /* CustomNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomNavigationBar.h; sourceTree = "<group>"; };
 		B26A8E00180DA6A400377C3B /* CustomNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomNavigationBar.m; sourceTree = "<group>"; };
 		B26A8E07180DCD5200377C3B /* CustomOverlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomOverlayView.h; sourceTree = "<group>"; };
@@ -53,6 +75,23 @@
 		B2C31A98180F20C90069702B /* ButtonBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ButtonBackground.png; sourceTree = "<group>"; };
 		B2C31A9A180F24C50069702B /* CameraIcon-White.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "CameraIcon-White.png"; sourceTree = "<group>"; };
 		B2C31A9C180F26AC0069702B /* ButtonBackgroundHighlighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ButtonBackgroundHighlighted.png; sourceTree = "<group>"; };
+		B2C6FE4818118252000C92D8 /* BuyButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BuyButton.png; sourceTree = "<group>"; };
+		B2C6FE4918118252000C92D8 /* Stock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Stock.png; sourceTree = "<group>"; };
+		B2C6FE4A18118252000C92D8 /* TimerBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TimerBackground.png; sourceTree = "<group>"; };
+		B2C6FE4E18119FD4000C92D8 /* PercentOff.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PercentOff.png; sourceTree = "<group>"; };
+		B2C6FE501811A322000C92D8 /* PlantagenetCherokee.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PlantagenetCherokee.ttf; sourceTree = "<group>"; };
+		B2C6FE541811AC5A000C92D8 /* Ubuntu-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-Medium.ttf"; sourceTree = "<group>"; };
+		B2C6FE561811B49C000C92D8 /* Ubuntu-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-Bold.ttf"; sourceTree = "<group>"; };
+		B2C6FE581811B5EA000C92D8 /* BerlinSansFBRegular.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = BerlinSansFBRegular.TTF; sourceTree = "<group>"; };
+		B2C6FE5A1811B691000C92D8 /* Ubuntu-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-Regular.ttf"; sourceTree = "<group>"; };
+		B2C6FE5C1811B72C000C92D8 /* BerlinSansFBDemi.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = BerlinSansFBDemi.TTF; sourceTree = "<group>"; };
+		B2C6FE5E1811C164000C92D8 /* MarkoOne-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MarkoOne-Regular.ttf"; sourceTree = "<group>"; };
+		B2C6FE621811D418000C92D8 /* LemonBGDuration1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LemonBGDuration1.png; sourceTree = "<group>"; };
+		B2C6FE631811D418000C92D8 /* LemonBGDuration2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LemonBGDuration2.png; sourceTree = "<group>"; };
+		B2C6FE641811D418000C92D8 /* LemonBGDuration3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LemonBGDuration3.png; sourceTree = "<group>"; };
+		B2C6FE651811D418000C92D8 /* LemonBGPrice1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LemonBGPrice1.png; sourceTree = "<group>"; };
+		B2C6FE661811D418000C92D8 /* LemonBGPrice2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LemonBGPrice2.png; sourceTree = "<group>"; };
+		B2C6FE671811D418000C92D8 /* LemonBGPrice3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LemonBGPrice3.png; sourceTree = "<group>"; };
 		B2DA073B1802F9C300CAF01A /* Lemon-Pipe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Lemon-Pipe.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2DA073E1802F9C300CAF01A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		B2DA07401802F9C300CAF01A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -87,6 +126,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B265FD2F18104E79008096CB /* QuartzCore.framework in Frameworks */,
 				B2DA073F1802F9C300CAF01A /* UIKit.framework in Frameworks */,
 				B2DA07411802F9C300CAF01A /* Foundation.framework in Frameworks */,
 				B2DA07431802F9C300CAF01A /* CoreGraphics.framework in Frameworks */,
@@ -113,8 +153,46 @@
 				B26A8E00180DA6A400377C3B /* CustomNavigationBar.m */,
 				B26A8E07180DCD5200377C3B /* CustomOverlayView.h */,
 				B26A8E08180DCD5200377C3B /* CustomOverlayView.m */,
+				B265FD2B18104E28008096CB /* GradientView.h */,
+				B265FD2C18104E28008096CB /* GradientView.m */,
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		B2C6FE521811A334000C92D8 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				B2C6FE621811D418000C92D8 /* LemonBGDuration1.png */,
+				B2C6FE631811D418000C92D8 /* LemonBGDuration2.png */,
+				B2C6FE641811D418000C92D8 /* LemonBGDuration3.png */,
+				B2C6FE651811D418000C92D8 /* LemonBGPrice1.png */,
+				B2C6FE661811D418000C92D8 /* LemonBGPrice2.png */,
+				B2C6FE671811D418000C92D8 /* LemonBGPrice3.png */,
+				B2C6FE4E18119FD4000C92D8 /* PercentOff.png */,
+				B2C31A9A180F24C50069702B /* CameraIcon-White.png */,
+				B2C31A64180F0FB80069702B /* NavBarImage.png */,
+				B2C6FE4818118252000C92D8 /* BuyButton.png */,
+				B2C6FE4918118252000C92D8 /* Stock.png */,
+				B2C6FE4A18118252000C92D8 /* TimerBackground.png */,
+				B2C31A98180F20C90069702B /* ButtonBackground.png */,
+				B2C31A9C180F26AC0069702B /* ButtonBackgroundHighlighted.png */,
+				B2DA077718035FD300CAF01A /* Protein.jpg */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		B2C6FE531811A349000C92D8 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				B2C6FE501811A322000C92D8 /* PlantagenetCherokee.ttf */,
+				B2C6FE541811AC5A000C92D8 /* Ubuntu-Medium.ttf */,
+				B2C6FE561811B49C000C92D8 /* Ubuntu-Bold.ttf */,
+				B2C6FE581811B5EA000C92D8 /* BerlinSansFBRegular.TTF */,
+				B2C6FE5A1811B691000C92D8 /* Ubuntu-Regular.ttf */,
+				B2C6FE5C1811B72C000C92D8 /* BerlinSansFBDemi.TTF */,
+				B2C6FE5E1811C164000C92D8 /* MarkoOne-Regular.ttf */,
+			);
+			name = Fonts;
 			sourceTree = "<group>";
 		};
 		B2DA07321802F9C300CAF01A = {
@@ -137,6 +215,7 @@
 		B2DA073D1802F9C300CAF01A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B265FD2E18104E78008096CB /* QuartzCore.framework */,
 				B2DA073E1802F9C300CAF01A /* UIKit.framework */,
 				B2DA07401802F9C300CAF01A /* Foundation.framework */,
 				B2DA07421802F9C300CAF01A /* CoreGraphics.framework */,
@@ -164,11 +243,8 @@
 		B2DA07451802F9C300CAF01A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				B2C31A9A180F24C50069702B /* CameraIcon-White.png */,
-				B2C31A64180F0FB80069702B /* NavBarImage.png */,
-				B2C31A98180F20C90069702B /* ButtonBackground.png */,
-				B2C31A9C180F26AC0069702B /* ButtonBackgroundHighlighted.png */,
-				B2DA077718035FD300CAF01A /* Protein.jpg */,
+				B2C6FE521811A334000C92D8 /* Images */,
+				B2C6FE531811A349000C92D8 /* Fonts */,
 				B2DA07461802F9C300CAF01A /* Lemon-Pipe-Info.plist */,
 				B2DA07471802F9C300CAF01A /* InfoPlist.strings */,
 				B2DA074A1802F9C300CAF01A /* main.m */,
@@ -254,6 +330,23 @@
 				B2C31A99180F20C90069702B /* ButtonBackground.png in Resources */,
 				B2C31A9B180F24C50069702B /* CameraIcon-White.png in Resources */,
 				B2C31A9D180F26AC0069702B /* ButtonBackgroundHighlighted.png in Resources */,
+				B2C6FE4B18118252000C92D8 /* BuyButton.png in Resources */,
+				B2C6FE4C18118252000C92D8 /* Stock.png in Resources */,
+				B2C6FE4D18118252000C92D8 /* TimerBackground.png in Resources */,
+				B2C6FE4F18119FD4000C92D8 /* PercentOff.png in Resources */,
+				B2C6FE511811A322000C92D8 /* PlantagenetCherokee.ttf in Resources */,
+				B2C6FE551811AC5A000C92D8 /* Ubuntu-Medium.ttf in Resources */,
+				B2C6FE571811B49C000C92D8 /* Ubuntu-Bold.ttf in Resources */,
+				B2C6FE591811B5EA000C92D8 /* BerlinSansFBRegular.TTF in Resources */,
+				B2C6FE5B1811B691000C92D8 /* Ubuntu-Regular.ttf in Resources */,
+				B2C6FE5D1811B72C000C92D8 /* BerlinSansFBDemi.TTF in Resources */,
+				B2C6FE5F1811C164000C92D8 /* MarkoOne-Regular.ttf in Resources */,
+				B2C6FE681811D418000C92D8 /* LemonBGDuration1.png in Resources */,
+				B2C6FE691811D418000C92D8 /* LemonBGDuration2.png in Resources */,
+				B2C6FE6A1811D418000C92D8 /* LemonBGDuration3.png in Resources */,
+				B2C6FE6B1811D418000C92D8 /* LemonBGPrice1.png in Resources */,
+				B2C6FE6C1811D418000C92D8 /* LemonBGPrice2.png in Resources */,
+				B2C6FE6D1811D418000C92D8 /* LemonBGPrice3.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,6 +371,7 @@
 				B26A8E01180DA6A400377C3B /* CustomNavigationBar.m in Sources */,
 				B26A8E09180DCD5200377C3B /* CustomOverlayView.m in Sources */,
 				B2476863180EE1E100002C85 /* EditPhotoView.m in Sources */,
+				B265FD2D18104E28008096CB /* GradientView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

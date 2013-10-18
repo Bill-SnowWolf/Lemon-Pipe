@@ -16,4 +16,6 @@
 @property (nonatomic, retain) UILabel *discountPriceLabel;
 @property (nonatomic, retain) UIButton *redoButton;
 @property (nonatomic, retain) UIButton *postButton;
+
+- (id)initWithFrame:(CGRect)frame discount:(NSInteger) discount msrp:(float)msrp productImage:(UIImage *)productImage promotionDays:(NSInteger)days promotionHours:(NSInteger)hours;
 @end

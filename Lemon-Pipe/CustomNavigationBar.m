@@ -16,6 +16,8 @@
     if (self) {
         // Initialization code
         [self setTintColor:[UIColor colorWithRed:0.941 green:0.392 blue:0.196 alpha:1.0]];
+//        CGAffineTransform translate = CGAffineTransformMakeTranslation(0, -44 / 2.0);
+//        self.transform = translate;
     }
     return self;
 }

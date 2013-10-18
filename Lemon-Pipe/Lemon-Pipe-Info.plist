@@ -30,6 +30,16 @@
 	<array>
 		<string>armv7</string>
 	</array>
+	<key>UIAppFonts</key>
+	<array>
+		<string>PlantagenetCherokee.ttf</string>
+		<string>Ubuntu-Medium.ttf</string>
+		<string>Ubuntu-Bold.ttf</string>
+		<string>BerlinSansFBRegular.TTF</string>
+		<string>Ubuntu-Regular.ttf</string>
+		<string>BerlinSansFBDemi.TTF</string>
+		<string>MarkoOne-Regular.ttf</string>
+	</array>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>

@@ -57,11 +57,13 @@
     [retakeButton setTitle:@"Retake" forState:UIControlStateNormal];
     [retakeButton setBackgroundImage:buttonBackground forState:UIControlStateNormal];
     [retakeButton setBackgroundImage:buttonBackgroundHighlighted forState:UIControlStateHighlighted];
+    [retakeButton.titleLabel setFont:[UIFont fontWithName:@"MarkoOne-Regular" size:20]];
     [self addSubview:retakeButton];
     
     useButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [useButton setBackgroundImage:buttonBackground forState:UIControlStateNormal];
     [useButton setFrame:CGRectMake(180, 360, 100, 40)];
+    [useButton.titleLabel setFont:[UIFont fontWithName:@"MarkoOne-Regular" size:20]];
     [useButton setTitle:@"Use" forState:UIControlStateNormal];
     [useButton setBackgroundImage:buttonBackgroundHighlighted forState:UIControlStateHighlighted];
     [self addSubview:useButton];

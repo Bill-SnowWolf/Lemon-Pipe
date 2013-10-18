@@ -47,7 +47,7 @@
     [takePhotoButton setBackgroundImage:buttonBackgroundHighlighted forState:UIControlStateHighlighted];
     [takePhotoButton setImage:cameraIcon forState:UIControlStateNormal];
     [takePhotoButton setFrame:CGRectMake(110, 390, 100, 40)];
-    
+
     
     CGRect f = self.frame;
     //    f.size.height -= 44;
@@ -88,7 +88,6 @@
     CGContextSetLineDash(myContext, 0, dashLength, 2);
     CGContextStrokePath(myContext);
     
-    
     UIImage *overlayImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     
@@ -96,9 +95,10 @@
     overlayIV.image = overlayImage;
     [self addSubview:overlayIV];
     
+ 
     [self addSubview:takePhotoButton];
     
-    
+ 
 }
 
 @end
